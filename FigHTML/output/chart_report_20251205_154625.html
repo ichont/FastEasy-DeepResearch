@@ -1,0 +1,480 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国应急管理产业发展趋势数据可视化报告</title>
+    <script>
+        // Chart.js将通过CDN加载，确保离线可用
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            color: #2d3748;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            letter-spacing: -0.5px;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin: 0;
+            font-weight: 400;
+        }
+        
+        .report-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .info-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+        }
+        
+        .chart-container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .chart-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+        }
+        
+        .chart-header {
+            padding: 25px 30px 15px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .chart-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin: 0 0 5px 0;
+        }
+        
+        .chart-subtitle {
+            color: #718096;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        .chart-wrapper {
+            position: relative;
+            height: 400px;
+            padding: 20px 30px;
+        }
+        
+        .chart-analysis {
+            background: #f7fafc;
+            padding: 20px 30px;
+            border-top: 1px solid #eaeaea;
+        }
+        
+        .analysis-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin: 0 0 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .analysis-title::before {
+            content: "💡";
+            margin-right: 8px;
+        }
+        
+        .analysis-content {
+            color: #4a5568;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .report-info {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+            
+            .chart-wrapper {
+                height: 300px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>中国应急管理产业发展趋势数据可视化报告</h1>
+            <p class="subtitle">基于AI智能分析的数据洞察</p>
+            <div class="report-info">
+                <div class="info-item">生成时间: 2025-12-05 15:46:04</div>
+                <div class="info-item">原始查询: 中国应急管理产业发展趋势</div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <div class="chart-header">
+                <h2 class="chart-title">2021年中国应急产业细分产品数量占比</h2>
+                <p class="chart-subtitle">柱状图 - 类别数据对比</p>
+            </div>
+            <div class="chart-wrapper">
+                <canvas id="chart_0"></canvas>
+            </div>
+            <div class="chart-analysis">
+                <h3 class="analysis-title">数据分析</h3>
+                <p class="analysis-content">2021年中国应急产业中，应急服务产品数量占比最高（56%），占据主导地位，其次是应急救援（24%）和监测预警（18%），安全防护产品占比较小（2%）。</p>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <div class="chart-header">
+                <h2 class="chart-title">中国应急产业市场规模</h2>
+                <p class="chart-subtitle">折线图 - 趋势变化分析</p>
+            </div>
+            <div class="chart-wrapper">
+                <canvas id="chart_1"></canvas>
+            </div>
+            <div class="chart-analysis">
+                <h3 class="analysis-title">数据分析</h3>
+                <p class="analysis-content">中国应急产业市场规模从2018年的1.24万亿元增长至2023年的2.10万亿元，五年间增幅达69.35%，呈现强劲的持续扩张趋势。</p>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <div class="chart-header">
+                <h2 class="chart-title">2021年中国应急产业产品细分市场（按产品数量占比）</h2>
+                <p class="chart-subtitle">饼图 - 占比分布情况</p>
+            </div>
+            <div class="chart-wrapper">
+                <canvas id="chart_2"></canvas>
+            </div>
+            <div class="chart-analysis">
+                <h3 class="analysis-title">数据分析</h3>
+                <p class="analysis-content">2021年中国应急产业中，应急服务产品占据主导地位，占比达56%，表明产业重心向服务端倾斜。应急救援和监测预警产品合计占比42%，构成重要补充，而安全防护产品占比仅2%，市场空间较小。</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>本报告由AI自动生成 | 数据来源: 互联网搜索</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+
+        // 柱状图 1
+        (function() {
+            const ctx_0 = document.getElementById('chart_0').getContext('2d');
+            new Chart(ctx_0, {
+                type: 'bar',
+                data: {
+                    labels: ["\u5e94\u6025\u670d\u52a1", "\u5e94\u6025\u6551\u63f4", "\u76d1\u6d4b\u9884\u8b66", "\u5b89\u5168\u9632\u62a4"],
+                    datasets: [{
+                        label: '占比 (%)',
+                        data: [56, 24, 18, 2],
+                        backgroundColor: [
+                            'rgba(102, 126, 234, 0.7)',
+                            'rgba(118, 75, 162, 0.7)',
+                            'rgba(237, 100, 166, 0.7)',
+                            'rgba(255, 159, 64, 0.7)',
+                            'rgba(72, 187, 120, 0.7)',
+                            'rgba(66, 153, 225, 0.7)'
+                        ],
+                        borderColor: [
+                            'rgba(102, 126, 234, 1)',
+                            'rgba(118, 75, 162, 1)',
+                            'rgba(237, 100, 166, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(72, 187, 120, 1)',
+                            'rgba(66, 153, 225, 1)'
+                        ],
+                        borderWidth: 1,
+                        borderRadius: 5,
+                        borderSkipped: false,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '占比 (%)',
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                }
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: '细分产品',
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                }
+                            },
+                            grid: {
+                                display: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                            padding: 12,
+                            cornerRadius: 8,
+                            titleFont: {
+                                size: 14,
+                                weight: 'bold'
+                            },
+                            bodyFont: {
+                                size: 13
+                            }
+                        }
+                    }
+                }
+            });
+        })();
+
+        // 折线图 2
+        (function() {
+            const ctx_1 = document.getElementById('chart_1').getContext('2d');
+            new Chart(ctx_1, {
+                type: 'line',
+                data: {
+                    labels: ["2018\u5e74", "2022\u5e74", "2023\u5e74"],
+                    datasets: [{
+                        label: '市场规模 (万亿元)',
+                        data: [1.24, 1.94, 2.1],
+                        fill: true,
+                        backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                        borderColor: 'rgba(102, 126, 234, 1)',
+                        tension: 0.4,
+                        pointBackgroundColor: 'rgba(102, 126, 234, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(102, 126, 234, 1)',
+                        pointRadius: 5,
+                        pointHoverRadius: 7,
+                        borderWidth: 3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '市场规模 (万亿元)',
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                }
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: '年份',
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                }
+                            },
+                            grid: {
+                                display: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                            padding: 12,
+                            cornerRadius: 8,
+                            titleFont: {
+                                size: 14,
+                                weight: 'bold'
+                            },
+                            bodyFont: {
+                                size: 13
+                            }
+                        }
+                    }
+                }
+            });
+        })();
+
+        // 饼图 3
+        (function() {
+            const ctx_2 = document.getElementById('chart_2').getContext('2d');
+            new Chart(ctx_2, {
+                type: 'pie',
+                data: {
+                    labels: ["\u5e94\u6025\u670d\u52a1\u4ea7\u54c1", "\u5e94\u6025\u6551\u63f4\u4ea7\u54c1", "\u76d1\u6d4b\u9884\u8b66\u4ea7\u54c1", "\u5b89\u5168\u9632\u62a4\u4ea7\u54c1"],
+                    datasets: [{
+                        data: [56, 24, 18, 2],
+                        backgroundColor: [
+                            'rgba(102, 126, 234, 0.7)',
+                            'rgba(118, 75, 162, 0.7)',
+                            'rgba(237, 100, 166, 0.7)',
+                            'rgba(255, 159, 64, 0.7)',
+                            'rgba(72, 187, 120, 0.7)',
+                            'rgba(66, 153, 225, 0.7)'
+                        ],
+                        borderColor: [
+                            'rgba(102, 126, 234, 1)',
+                            'rgba(118, 75, 162, 1)',
+                            'rgba(237, 100, 166, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(72, 187, 120, 1)',
+                            'rgba(66, 153, 225, 1)'
+                        ],
+                        borderWidth: 2,
+                        hoverOffset: 20
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                font: {
+                                    size: 13
+                                },
+                                padding: 20,
+                                usePointStyle: true,
+                                pointStyle: 'circle'
+                            }
+                        },
+                        title: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                            padding: 12,
+                            cornerRadius: 8,
+                            titleFont: {
+                                size: 14,
+                                weight: 'bold'
+                            },
+                            bodyFont: {
+                                size: 13
+                            },
+                            callbacks: {
+                                label: function(context) {
+                                    return context.label + ': ' + context.raw + '%';
+                                }
+                            }
+                        }
+                    },
+                    layout: {
+                        padding: {
+                            left: 20,
+                            right: 20,
+                            top: 10,
+                            bottom: 10
+                        }
+                    }
+                }
+            });
+        })();
+
+    </script>
+</body>
+</html>
