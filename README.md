@@ -74,7 +74,7 @@ TAVILY_API_KEY = "your_tavily_api_key_here"
 ### 运行示例脚本
 
 ```bash
-cd exmain
+cd main
 python main.py
 ```
 
