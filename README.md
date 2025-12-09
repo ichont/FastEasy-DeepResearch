@@ -145,6 +145,7 @@ RAG_TOP_K = 5                        # RAG返回的最相关文档数量
 ## 🤝 感谢
 
 感谢[伟岸纵横](https://www.vrgvtech.com/)提供的API和算力服务
+
 感谢[DeepSearchAgent-Demo](https://github.com/666ghj/DeepSearchAgent-Demo)提供的思路与参考
 
 ## 📄 许可证
