@@ -4,7 +4,9 @@
 [![](https://img.shields.io/github/forks/ichont/FastEasy-DeepResearch.svg?style=flat)](https://github.com/ichont/FastEasy-DeepResearch/network/members)
 ![](https://img.shields.io/github/repo-size/ichont/FastEasy-DeepResearch.svg?style=flat)
 
-是一个智能的深度研究报告生成工具，它能够根据您输入的主题，自动搜索相关信息、生成结构化的研究报告，并将其转换为美观的HTML格式，包含交互式图表和数据可视化。[demo](https://ichont.github.io/FastEasy-DeepResearch/reports/deep_search_report_关于中国应急管理产业发展趋势的深度研究报告_20251208_163443.html)
+FastEasy-DeepResearch是一个智能的深度研究报告生成工具，它能够根据您输入的主题，自动在全网搜索相关信息、生成结构化的研究报告，并将其转换为美观的HTML格式，包含交互式图表和数据可视化。
+
+这是一个报告案例[demo](https://ichont.github.io/FastEasy-DeepResearch/reports/deep_search_report_关于中国应急管理产业发展趋势的深度研究报告_20251208_163443.html)
 
 ## 🚀 输入研究主题，即可输出美观的html图文分析报告！
 
