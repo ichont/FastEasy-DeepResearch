@@ -142,9 +142,10 @@ RAG_TOP_K = 5                        # RAG返回的最相关文档数量
 - 生成报告的时间取决于主题复杂度和网络速度
 - 您可以通过调整配置来优化报告质量和生成速度
 
-## 🤝 贡献
+## 🤝 感谢
 
-欢迎提交Issue和Pull Request！
+感谢[伟岸纵横](https://www.vrgvtech.com/)提供的API和算力服务
+感谢[DeepSearchAgent-Demo](https://github.com/666ghj/DeepSearchAgent-Demo)提供的思路与参考
 
 ## 📄 许可证
 
